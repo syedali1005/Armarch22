@@ -21,7 +21,7 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function DashProfile() {
   const { currentUser, error, loading } = useSelector((state) => state.user);
@@ -235,16 +235,16 @@ export default function DashProfile() {
           outline
           disabled={loading || imageFileUploading}
         >
-          {loading ? 'Loading ...' : 'Update'}
+          {loading ? "Loading..." : "Update"}
         </Button>
         {currentUser.isAdmin && (
-          <Link to={"/upload-project"}>
+          <Link to={"/create-post"}>
             <Button
               type="button"
               gradientDuoTone="purpleToPink"
               className="w-full"
             >
-              Upload A Project
+              Create a post
             </Button>
           </Link>
         )}
