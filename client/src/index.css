@@ -112,3 +112,7 @@ body {
   pointer-events: none;
   animation: border-pulse 2s infinite;
 }
+
+.gradient-yellow-to-yellow {
+  background: linear-gradient(90deg, #FFE58C 0%, #FFE58C 100%);
+}
