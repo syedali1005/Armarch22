@@ -16,8 +16,6 @@ import { toggleTheme } from "../redux/theme/themeSlice.js";
 import { signoutSuccess } from '../redux/user/userSlice';
 import { useEffect, useState } from 'react';
 
-
-
 export default function Header() {
   const path = useLocation().pathname;
   const location = useLocation();
@@ -65,9 +63,11 @@ export default function Header() {
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
       >
-        <span className="px-2 py-1 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded-md text-white">
-          Armarch
-        </span>
+        <img
+          src="/01.png"
+          alt="Armarch Logo"
+          className="h-28"
+        />
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
@@ -95,12 +95,10 @@ export default function Header() {
           <Dropdown
             arrowIcon={false}
             inline
-            label={
-              <Avatar alt="user" img={currentUser.profilePicture} rounded />
-            }
+            label={<Avatar alt="user" img={currentUser.profilePicture} rounded />}
           >
             <Dropdown.Header>
-              <span className="block text-sm ">@{currentUser.username}</span>
+              <span className="block text-sm">@{currentUser.username}</span>
               <span className="block text-sm font-medium truncate">
                 @{currentUser.email}
               </span>
@@ -111,13 +109,7 @@ export default function Header() {
             <Dropdown.Divider />
             <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
           </Dropdown>
-        ) : (
-          <Link to="/sign-in">
-            <Button gradientDuoTone="purpleToBlue" outline>
-              Sign In
-            </Button>
-          </Link>
-        )}
+        ) : null}
         <NavbarToggle />
       </div>
       <NavbarCollapse>

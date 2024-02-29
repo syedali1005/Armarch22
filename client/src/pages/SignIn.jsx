@@ -2,12 +2,16 @@ import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice";
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from "../redux/user/userSlice";
 import OAuth from "../components/OAuth";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const {loading, error: errorMessage} = useSelector(state => state.user)
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -16,7 +20,7 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure('Please fill all the fields'));
+      return dispatch(signInFailure("Please fill all the fields"));
     }
     try {
       dispatch(signInStart());
@@ -34,7 +38,7 @@ export default function SignIn() {
         navigate("/");
       }
     } catch (error) {
-     dispatch(signInFailure(error.message));
+      dispatch(signInFailure(error.message));
     }
   };
   return (
@@ -43,9 +47,7 @@ export default function SignIn() {
         {/* Left */}
         <div className="flex-1">
           <Link to="/" className="font-bold dark:text-white text-4xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded-md text-white">
-              Armarch
-            </span>
+          <img src="/01.png" alt="Armarch Logo" className="h-48 mx-auto block" />
           </Link>
           <p className="text-sm mt-5">
             You can Sign-in with your email and password or with Google.
@@ -88,12 +90,13 @@ export default function SignIn() {
             </Button>
             <OAuth />
           </form>
-          <div className="flex gap-2 text-sm mt-5">
-            <span>Don't have an account?</span>
-            <Link to="/sign-up" className="text-amber-600">
-              Sign Up
-            </Link>
-          </div>
+          {/* <div className="flex gap-2 text-sm mt-5">
+          <span>Don't have an account?</span>
+          <Link to="/sign-up" className="text-amber-600">
+            Sign Up
+          </Link>
+        </div> */}
+
           {errorMessage && (
             <Alert className="mt-5" color="failure">
               {errorMessage}
