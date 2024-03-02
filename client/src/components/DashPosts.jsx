@@ -1,9 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Modal, Table, Button } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
-import { set } from 'mongoose';
 
 export default function DashPosts() {
   const { currentUser } = useSelector((state) => state.user);

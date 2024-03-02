@@ -6,8 +6,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
-        secure: false,
+        target: 'https://armarch22.vercel.app/', // Replace this with your backend server URL
+        secure: true, // Change to true if your backend server uses HTTPS
+        changeOrigin: true, // Enable this option if you're proxying to a different origin
+        rewrite: (path) => path.replace(/^\/api/, '') // Optional: Modify this if your backend expects a different path
       },
     },
   },
