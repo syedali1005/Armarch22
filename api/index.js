@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.route.js';
 import postRoutes from './routes/post.route.js';
 import cookieParser from 'cookie-parser';
 // import path from 'path';
+const app = express();
 
 dotenv.config();
 
@@ -20,7 +21,6 @@ dotenv.config();
 
 // const __dirname = path.resolve();
 
-const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
