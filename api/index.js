@@ -5,7 +5,7 @@ import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import postRoutes from './routes/post.route.js';
 import cookieParser from 'cookie-parser';
-import path from 'path';
+// import path from 'path';
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ mongoose
     console.log(err);
   });
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 const app = express();
 
