@@ -109,7 +109,13 @@ export default function Header() {
             <Dropdown.Divider />
             <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
           </Dropdown>
-        ) : null}
+          ) : (
+            <Link to='/sign-in'>
+              <Button gradientDuoTone='purpleToBlue' outline>
+                Sign In
+              </Button>
+            </Link>
+          )}
         <NavbarToggle />
       </div>
       <NavbarCollapse>
