@@ -7,7 +7,7 @@ export default function Projects() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('/api/post/getPosts');
+      const res = await fetch('https://armarch22.vercel.app/api/post/getPosts');
       const data = await res.json();
       setPosts(data.posts);
     };
