@@ -9,9 +9,16 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('/api/post/getPosts');
-      const data = await res.json();
-      setPosts(data.posts);
+      try {
+        const res = await fetch('https://armarch22.vercel.app/api/post/getPosts');
+        if (!res.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await res.json();
+        setPosts(data.posts);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
     fetchPosts();
   }, []);
