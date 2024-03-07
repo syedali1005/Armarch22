@@ -28,8 +28,7 @@ app.use(cookieParser());
 
 // Configure CORS to allow requests from your frontend domain
 app.use(cors({
-  origin: "https://armarch22.vercel.app",
-  credentials: true, // Allow sending cookies
+  origin: "https://armarch22-frontend.vercel.app"
 }));
 
 app.listen(3000, () => {
