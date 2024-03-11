@@ -26,7 +26,8 @@ export default function OAuth() {
                 })
             const data = await res.json()
             if (res.ok){
-                dispatch(signInSuccess(data))
+                 dispatch(signInSuccess(data?.rest))
+                document.cookie= `token=${data?.token}`;
                 navigate('/')
             }
         } catch (error) {
