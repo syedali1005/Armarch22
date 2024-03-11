@@ -58,7 +58,7 @@ export const signin = async (req, res, next) => {
     res
       .status(200)
       .cookie("access_token", token, { httpsOnly: true })
-      .json(rest);
+      .json({rest,token});
   } catch (error) {
     next(error);
   }
@@ -79,7 +79,7 @@ export const google = async (req, res, next) => {
         .cookie("access_token", token, {
           httpsOnly: true,
         })
-        .json(rest);
+      .json({rest,token});
     } else {
       const generatedPassword = Math.random().toString(36).slice(-8);
       const hashedPassword = bcryptjs.hashSync(generatedPassword, 10);
@@ -99,7 +99,7 @@ export const google = async (req, res, next) => {
         .cookie("access_token", token, {
           httpsOnly: true,
         })
-        .json(rest);
+        .json({rest,token});
     }
   } catch (error) {
     next(error);
