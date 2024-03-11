@@ -103,7 +103,7 @@ export default function DashPosts() {
                   <Table.Cell>
                     <Link
                       className='font-medium text-gray-900 dark:text-white'
-                      to={`https://armarch22.vercel.app/post/${post.slug}`}
+                      to={`/post/${post.slug}`}
                     >
                       {post.title}
                     </Link>
@@ -123,7 +123,7 @@ export default function DashPosts() {
                   <Table.Cell>
                     <Link
                       className='text-teal-500 hover:underline'
-                      to={`https://armarch22.vercel.app/update-post/${post._id}`}
+                      to={`/update-post/${post._id}`}
                     >
                       <span>Edit</span>
                     </Link>
