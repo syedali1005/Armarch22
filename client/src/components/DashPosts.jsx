@@ -52,7 +52,7 @@ export default function DashPosts() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `https://armarch22.vercel.app/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: 'DELETE',
         }
@@ -103,7 +103,7 @@ export default function DashPosts() {
                   <Table.Cell>
                     <Link
                       className='font-medium text-gray-900 dark:text-white'
-                      to={`/post/${post.slug}`}
+                      to={`https://armarch22.vercel.app/post/${post.slug}`}
                     >
                       {post.title}
                     </Link>
@@ -123,7 +123,7 @@ export default function DashPosts() {
                   <Table.Cell>
                     <Link
                       className='text-teal-500 hover:underline'
-                      to={`/update-post/${post._id}`}
+                      to={`https://armarch22.vercel.app/update-post/${post._id}`}
                     >
                       <span>Edit</span>
                     </Link>
