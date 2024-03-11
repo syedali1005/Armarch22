@@ -1,6 +1,11 @@
 import Post from "../models/post.model.js";
 import { errorHandler } from "../utils/error.js";
+import { verifyToken } from "../utils/verifyUser.js";
+
 export const create = async (req, res, next) => {
+  const token = req.header("access_token")
+  verifyToken(token,req, next)
+  
   if (!req.user.isAdmin) {
     return next(errorHandler(403, "You are not allowed to create a post"));
   }
