@@ -34,8 +34,8 @@ export default function SignIn() {
         dispatch(signInFailure(data.message));
       }
       if (res.ok) {
-        dispatch(signInSuccess(data));
-        navigate("/");
+       dispatch(signInSuccess(data?.rest));
+        document.cookie= `token=${data?.token}`;
       }
     } catch (error) {
       dispatch(signInFailure(error.message));
