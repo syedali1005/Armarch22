@@ -65,7 +65,6 @@ export default function CreatePost() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.JWT_SECRET}`, // Include the JWT_SECRET from environment variables
         },
         body: JSON.stringify(formData),
       });
@@ -74,7 +73,6 @@ export default function CreatePost() {
         setPublishError(data.message);
         return;
       }
-
       if (res.ok) {
         setPublishError(null);
         navigate(`/post/${data.slug}`);
