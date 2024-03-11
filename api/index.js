@@ -27,9 +27,7 @@ const __dirname = path.resolve();
 app.use(cookieParser());
 
 // Configure CORS to allow requests from your frontend domain
-app.use(cors({
-  origin: "https://armarch22-frontend.vercel.app"
-}));
+app.use(cors());
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000!");
