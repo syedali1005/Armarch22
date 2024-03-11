@@ -65,6 +65,7 @@ export default function CreatePost() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "access_token": document.cookie.split('=')[1],
         },
         body: JSON.stringify(formData),
       });
