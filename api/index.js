@@ -6,7 +6,7 @@ import authRoutes from "./routes/auth.route.js";
 import postRoutes from "./routes/post.route.js";
 import cookieParser from "cookie-parser";
 import path from "path";
-import cors from "cors";
+import cors from "cors"; // Import cors package
 
 const app = express();
 app.use(express.json());
@@ -31,20 +31,16 @@ app.use(cors({
   origin: "https://armarch22-frontend.vercel.app"
 }));
 
-// Define API routes
+app.listen(3000, () => {
+  console.log("Server is running on port 3000!");
+});
+
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
 
-// Serve static files (React build)
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
-// Fallback route to serve React app's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/dist/index.html'));
-});
-
-// Error handling middleware
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
@@ -53,10 +49,4 @@ app.use((err, req, res, next) => {
     statusCode,
     message,
   });
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
