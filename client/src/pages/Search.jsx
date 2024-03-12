@@ -134,6 +134,7 @@ export default function Search() {
               <option value="resedential">Resedential</option>
               <option value="commercial">Commercial</option>
               <option value="towers">Towers</option>
+              <option value="industrial">Industrial</option>
             </Select>
           </div>
           <Button type="submit" outline gradientDuoTone="purpleToPink">
