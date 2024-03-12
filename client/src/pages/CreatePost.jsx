@@ -105,8 +105,11 @@ export default function CreatePost() {
             <option value="uncategorized">Select a category</option>
             <option value="resedential">Resedential</option>
             <option value="commercial">Commercial</option>
-            <option value="towers">Towers</option>
+            <option value="multipurposetowers">Multi Purpose Towers</option>
              <option value="industrial">Industrial</option>
+            <option value="townplanning">Town Planning</option>
+            <option value="religiousbuildings">Religious Buildings</option>
+            <option value="recreationalbuildings">Recreational Building</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
