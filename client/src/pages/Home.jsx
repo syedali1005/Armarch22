@@ -37,10 +37,6 @@ export default function Home() {
           View all posts
         </Link>
       </div>
-      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
-        <CallToAction />
-      </div>
-
       <div className='max-w-6xl mx-auto px-3 py-7'>
         {posts && posts.length > 0 && (
           <div className='flex flex-col gap-20 w-full'>
@@ -58,6 +54,9 @@ export default function Home() {
             >
               View all posts
             </Link>
+             <div className='p-3 bg-amber-100 dark:bg-slate-700'>
+        <CallToAction />
+      </div>
           </div>
         )}
       </div>
