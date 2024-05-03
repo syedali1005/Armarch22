@@ -58,8 +58,8 @@ export default function Header() {
   };
 
   return (
-    <Navbar className={`border-b-2 ${theme === 'dark' ? 'bg-white dark:bg-gray-900' : ''}`}>
-      <Link
+ <Navbar className={`border-b-2 ${theme === 'dark' ? 'dark:bg-gray-900' : 'bg-white'}`}>     
+   <Link
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
       >
